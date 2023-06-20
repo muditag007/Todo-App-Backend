@@ -11,6 +11,15 @@ class UserService {
       throw e
     }
   }
+
+  static async checkUser (email) {
+    try {
+      console.log(UserModel({ email }))
+      return await UserModel.findOne({ email })
+    } catch (e) {
+      throw e
+    }
+  }
 }
 
 module.exports = UserService
